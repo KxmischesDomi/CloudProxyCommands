@@ -6,13 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="cloud-bungee-commands" />
-        <module name="CloudProxyCommands" />
+        <module name="cloud-proxy-commands" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="cloud-bungee-commands" target="8" />
-      <module name="CloudProxyCommands" target="8" />
+      <module name="cloud-proxy-commands" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

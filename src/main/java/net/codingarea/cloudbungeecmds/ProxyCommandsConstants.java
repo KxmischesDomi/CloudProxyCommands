@@ -4,7 +4,7 @@ package net.codingarea.cloudbungeecmds;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class BungeeCommandsConstants {
+public class ProxyCommandsConstants {
 
 	public static final String
 			BUNGEE_COMMANDS_CHANNEL_NAME = "bungee_commands_channel",

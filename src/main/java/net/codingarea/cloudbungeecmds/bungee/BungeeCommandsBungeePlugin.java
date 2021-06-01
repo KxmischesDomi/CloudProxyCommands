@@ -3,9 +3,9 @@ package net.codingarea.cloudbungeecmds.bungee;
 import de.dytanic.cloudnet.common.document.gson.JsonDocument;
 import de.dytanic.cloudnet.driver.CloudNetDriver;
 import de.dytanic.cloudnet.wrapper.Wrapper;
-import net.codingarea.cloudbungeecmds.BungeeCommandExecuteInfo;
-import net.codingarea.cloudbungeecmds.BungeeCommandInfo;
-import net.codingarea.cloudbungeecmds.BungeeCommandsConstants;
+import net.codingarea.cloudbungeecmds.ProxyCommandExecuteInfo;
+import net.codingarea.cloudbungeecmds.ProxyCommandInfo;
+import net.codingarea.cloudbungeecmds.ProxyCommandsConstants;
 import net.codingarea.cloudbungeecmds.bungee.command.BungeeCommandsCloudNetCommand;
 import net.codingarea.cloudbungeecmds.bungee.listener.BungeeCommandsBungeeChannelMessageListener;
 import net.md_5.bungee.api.plugin.Command;
@@ -36,7 +36,7 @@ public class BungeeCommandsBungeePlugin extends Plugin {
 		sendOnEnableMessage();
 	}
 
-	public void registerCommand(BungeeCommandInfo commandInfo) {
+	public void registerCommand(ProxyCommandInfo commandInfo) {
 		getProxy().getPluginManager().registerCommand(this, new BungeeCommandsCloudNetCommand(commandInfo));
 	}
 
@@ -55,17 +55,17 @@ public class BungeeCommandsBungeePlugin extends Plugin {
 
 	public void sendOnEnableMessage() {
 		CloudNetDriver.getInstance().getMessenger().sendChannelMessage(
-				BungeeCommandsConstants.BUNGEE_COMMANDS_CHANNEL_NAME,
-				BungeeCommandsConstants.BUNGEE_COMMANDS_ON_ENABLE,
-				new JsonDocument(BungeeCommandsConstants.BUNGEE_COMMANDS_COMMAND_ON_ENABLE_UUID, Wrapper.getInstance().getCurrentServiceInfoSnapshot().getServiceId().getUniqueId())
+				ProxyCommandsConstants.BUNGEE_COMMANDS_CHANNEL_NAME,
+				ProxyCommandsConstants.BUNGEE_COMMANDS_ON_ENABLE,
+				new JsonDocument(ProxyCommandsConstants.BUNGEE_COMMANDS_COMMAND_ON_ENABLE_UUID, Wrapper.getInstance().getCurrentServiceInfoSnapshot().getServiceId().getUniqueId())
 		);
 	}
 
 	public void executeCommand(@NotNull String name, UUID uuid, String[] args) {
 		CloudNetDriver.getInstance().getMessenger().sendChannelMessage(
-				BungeeCommandsConstants.BUNGEE_COMMANDS_CHANNEL_NAME,
-				BungeeCommandsConstants.BUNGEE_COMMANDS_EXECUTE_COMMAND,
-				new JsonDocument(BungeeCommandsConstants.BUNGEE_COMMANDS_COMMAND_EXECUTE_INFO, new BungeeCommandExecuteInfo(name, uuid, args))
+				ProxyCommandsConstants.BUNGEE_COMMANDS_CHANNEL_NAME,
+				ProxyCommandsConstants.BUNGEE_COMMANDS_EXECUTE_COMMAND,
+				new JsonDocument(ProxyCommandsConstants.BUNGEE_COMMANDS_COMMAND_EXECUTE_INFO, new ProxyCommandExecuteInfo(name, uuid, args))
 		);
 	}
 

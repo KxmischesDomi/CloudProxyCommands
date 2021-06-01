@@ -1,9 +1,8 @@
 package net.codingarea.cloudbungeecmds.bungee.command;
 
-import net.codingarea.cloudbungeecmds.BungeeCommandInfo;
+import net.codingarea.cloudbungeecmds.ProxyCommandInfo;
 import net.codingarea.cloudbungeecmds.bungee.BungeeCommandsBungeePlugin;
 import net.md_5.bungee.api.CommandSender;
-import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 import org.jetbrains.annotations.NotNull;
@@ -16,7 +15,7 @@ import java.util.UUID;
  */
 public class BungeeCommandsCloudNetCommand extends Command {
 
-	public BungeeCommandsCloudNetCommand(BungeeCommandInfo commandInfo) {
+	public BungeeCommandsCloudNetCommand(ProxyCommandInfo commandInfo) {
 		super(commandInfo.getName(), commandInfo.getPermission(), commandInfo.getAliases());
 	}
 

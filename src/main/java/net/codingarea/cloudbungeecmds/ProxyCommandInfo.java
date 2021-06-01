@@ -6,16 +6,16 @@ import java.util.Arrays;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class BungeeCommandInfo {
+public class ProxyCommandInfo {
 
 	private final String name, permission;
 	private final String[] aliases;
 
-	public BungeeCommandInfo(String name, String... aliases) {
+	public ProxyCommandInfo(String name, String... aliases) {
 		this(name, null, aliases);
 	}
 
-	public BungeeCommandInfo(String name, String permission, String... aliases) {
+	public ProxyCommandInfo(String name, String permission, String... aliases) {
 		this.name = name;
 		this.permission = permission;
 		this.aliases = aliases;

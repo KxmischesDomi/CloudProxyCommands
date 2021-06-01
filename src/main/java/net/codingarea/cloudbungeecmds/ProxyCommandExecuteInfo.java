@@ -9,13 +9,13 @@ import java.util.UUID;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class BungeeCommandExecuteInfo {
+public class ProxyCommandExecuteInfo {
 
 	private final String commandName;
 	private final UUID uuid;
 	private final String[] args;
 
-	public BungeeCommandExecuteInfo(@NotNull String commandName, UUID uuid, String[] args) {
+	public ProxyCommandExecuteInfo(@NotNull String commandName, UUID uuid, String[] args) {
 		this.commandName = commandName;
 		this.uuid = uuid;
 		this.args = args;

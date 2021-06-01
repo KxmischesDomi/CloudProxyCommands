@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/CloudBungeeCommands.iml" filepath="$PROJECT_DIR$/.idea/CloudBungeeCommands.iml" />
-      <module fileurl="file://$PROJECT_DIR$/cloud-bungee-commands.iml" filepath="$PROJECT_DIR$/cloud-bungee-commands.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cloud-proxy-commands.iml" filepath="$PROJECT_DIR$/cloud-proxy-commands.iml" />
     </modules>
   </component>
 </project>
