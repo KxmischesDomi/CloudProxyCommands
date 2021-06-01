@@ -1,5 +1,6 @@
 # CloudProxyCommands
  A simple CloudNet Module api to register commands on bungeecord and use them
+ Looking forward to give support to more cloud systems than only CloudNet
 
 ### Getting the manager
 
