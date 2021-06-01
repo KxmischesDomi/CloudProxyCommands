@@ -1,0 +1,4 @@
+name: CloudNet-Bungee-Commands
+version: "1.0"
+author: KxmischesDomi
+main: net.codingarea.cloudbungeecmds.bungee.BungeeCommandsBungeePlugin
