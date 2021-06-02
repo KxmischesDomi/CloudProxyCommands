@@ -3,13 +3,11 @@
  Looking forward to give support to more cloud systems than only CloudNet
 
 ### Getting the manager
-
  You need to use the command manager to use any feature of this api.
  In all future code examples this variable will be used.
- Instead of getting the manager with the following code, you can also get it with the service provider of CloudNet.
 
 ```java
-ProxyCommandManagement manager = CloudNetProxyCommandsModule.getInstance().getProxyCommandManagement();
+ProxyCommandManagement manager = CloudNetDriver.getInstance().getServicesRegistry().getFirstService(ProxyCommandsManagement.class);
 ```
 
 ### Register new command
@@ -17,7 +15,7 @@ ProxyCommandManagement manager = CloudNetProxyCommandsModule.getInstance().getPr
  You can only give a command name, or you can also give a permission and aliases.
  If the command comes from a player the IProxyCommandSender will be overwritten by ProxyPlayerCommandSender, if the command comes from the console it will be overwritten by ProxyConsoleCommandSendet
  
- Inline example:
+#### Inline example:
 
 ```java
 manager.registerCommand(new ProxyCommandInfo("test", "system.testcommand", "t"), (sender, command, args) -> {
@@ -25,7 +23,7 @@ manager.registerCommand(new ProxyCommandInfo("test", "system.testcommand", "t"),
 });
 ```
 
- Extra class example:
+#### Extra class example:
 
 ```java
 manager.registerCommand(new ProxyCommandInfo("test", "system.testcommand", "t"), new TestCommand());
