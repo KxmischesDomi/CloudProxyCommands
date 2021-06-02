@@ -38,7 +38,7 @@ import net.codingarea.cloudbungeecmds.node.api.command.ProxyCommandExecutor;
 public class TestCommand implements ProxyCommandExecutor {
 
 	@Override
-	public void execute(ICommandSender sender, String command, String[] args) {
+	public void execute(IProxyCommandSender sender, String command, String[] args) {
 		sender.sendMessage(Arrays.toString(args));
 	}
 	
