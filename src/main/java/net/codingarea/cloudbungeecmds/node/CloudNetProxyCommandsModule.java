@@ -29,12 +29,6 @@ public final class CloudNetProxyCommandsModule extends NodeCloudNetModule {
 
 		IEventManager eventManager = CloudNetDriver.getInstance().getEventManager();
 		eventManager.registerListener(new ProxyCommandsCloudChannelMessageReceiveListener());
-
-		proxyCommandManagement.registerCommand(new ProxyCommandInfo("test"), (sender, command, args) -> {
-			sender.sendMessage(Arrays.toString(args));
-		});
-
-		proxyCommandManagement.unregisterCommand("test");
 	}
 
 	@ModuleTask(event = ModuleLifeCycle.UNLOADED)
