@@ -4,11 +4,13 @@ import de.dytanic.cloudnet.command.ConsoleCommandSender;
 import de.dytanic.cloudnet.command.ICommandSender;
 import de.dytanic.cloudnet.common.document.gson.JsonDocument;
 import de.dytanic.cloudnet.driver.CloudNetDriver;
+import de.dytanic.cloudnet.driver.service.ServiceEnvironmentType;
 import de.dytanic.cloudnet.driver.service.ServiceInfoSnapshot;
 import net.codingarea.cloudbungeecmds.ProxyCommandInfo;
 import net.codingarea.cloudbungeecmds.ProxyCommandsConstants;
 import net.codingarea.cloudbungeecmds.node.api.command.ProxyCommandExecutor;
-import net.codingarea.cloudbungeecmds.node.api.command.impl.ProxyPlayerCommandSender;
+import net.codingarea.cloudbungeecmds.node.api.command.impl.ProxyConsoleProxyCommandSender;
+import net.codingarea.cloudbungeecmds.node.api.command.impl.ProxyPlayerProxyCommandSender;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -18,7 +20,7 @@ import java.util.Map.Entry;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public final class ProxyCommandsManagement {
+public final class ProxyCommandManagement {
 
 	private final Map<ProxyCommandInfo, List<ProxyCommandExecutor>> bungeeCommandExecutors = new HashMap<>();
 
@@ -83,8 +85,8 @@ public final class ProxyCommandsManagement {
 	}
 
 	static ICommandSender getCommandSender(UUID uuid) {
-		if (uuid == null) return new ConsoleCommandSender(CloudNetDriver.getInstance().getLogger());
-		return new ProxyPlayerCommandSender(uuid);
+		if (uuid == null) return new ProxyConsoleProxyCommandSender(CloudNetDriver.getInstance().getLogger());
+		return new ProxyPlayerProxyCommandSender(uuid);
 	}
 
 }

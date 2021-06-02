@@ -5,7 +5,7 @@ import de.dytanic.cloudnet.driver.event.EventListener;
 import de.dytanic.cloudnet.driver.event.events.channel.ChannelMessageReceiveEvent;
 import net.codingarea.cloudbungeecmds.ProxyCommandExecuteInfo;
 import net.codingarea.cloudbungeecmds.ProxyCommandsConstants;
-import net.codingarea.cloudbungeecmds.node.ProxyCommandsManagement;
+import net.codingarea.cloudbungeecmds.node.ProxyCommandManagement;
 
 import java.util.UUID;
 
@@ -15,7 +15,7 @@ import java.util.UUID;
  */
 public class ProxyCommandsCloudChannelMessageReceiveListener {
 
-	private final ProxyCommandsManagement proxyCommandsManagement = CloudNetDriver.getInstance().getServicesRegistry().getFirstService(ProxyCommandsManagement.class);
+	private final ProxyCommandManagement proxyCommandManagement = CloudNetDriver.getInstance().getServicesRegistry().getFirstService(ProxyCommandManagement.class);
 
 	@EventListener
 	public void onChannelMessageReceive(ChannelMessageReceiveEvent event) {
@@ -24,11 +24,11 @@ public class ProxyCommandsCloudChannelMessageReceiveListener {
 		if (event.getMessage().equals(ProxyCommandsConstants.BUNGEE_COMMANDS_EXECUTE_COMMAND)) {
 
 			ProxyCommandExecuteInfo executeInfo = event.getData().get(ProxyCommandsConstants.BUNGEE_COMMANDS_COMMAND_EXECUTE_INFO, ProxyCommandExecuteInfo.class);
-			proxyCommandsManagement.executeCommand(executeInfo.getCommandName(), executeInfo.getUUID(), executeInfo.getArgs());
+			proxyCommandManagement.executeCommand(executeInfo.getCommandName(), executeInfo.getUUID(), executeInfo.getArgs());
 
 		} else if (event.getMessage().equals(ProxyCommandsConstants.BUNGEE_COMMANDS_ON_ENABLE)) {
 			UUID uuid = event.getData().get(ProxyCommandsConstants.BUNGEE_COMMANDS_COMMAND_ON_ENABLE_UUID, UUID.class);
-			proxyCommandsManagement.registerAllCommandsOnProxy(CloudNetDriver.getInstance().getCloudServiceProvider().getCloudService(uuid));
+			proxyCommandManagement.registerAllCommandsOnProxy(CloudNetDriver.getInstance().getCloudServiceProvider().getCloudService(uuid));
 
 		}
 

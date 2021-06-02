@@ -9,13 +9,13 @@
  Instead of getting the manager with the following code, you can also get it with the service provider of CloudNet.
 
 ```java
-ProxyCommandsManagement manager = CloudNetProxyCommandsModule.getInstance().getProxyCommandsManagement();
+ProxyCommandManagement manager = CloudNetProxyCommandsModule.getInstance().getProxyCommandManagement();
 ```
 
 ### Register new command
  The regsterCommand methods uses an instance of ProxyCommandInfo which gives all information the proxy needs to register the command, and a ProxyCommandExecutor which has a method execute with a sender, the command and the arguments.  
  You can only give a command name, or you can also give a permission and aliases.
- If the command comes from a player the ICommandSender will be overwritten by ProxyPlayerCommandSender
+ If the command comes from a player the IProxyCommandSender will be overwritten by ProxyPlayerCommandSender, if the command comes from the console it will be overwritten by ProxyConsoleCommandSendet
  
  Inline example:
 

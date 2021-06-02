@@ -1,11 +1,11 @@
 package net.codingarea.cloudbungeecmds.node.api.command.impl;
 
-import de.dytanic.cloudnet.command.ICommandSender;
 import de.dytanic.cloudnet.driver.CloudNetDriver;
 import de.dytanic.cloudnet.driver.permission.IPermissionUser;
 import de.dytanic.cloudnet.ext.bridge.player.ICloudOfflinePlayer;
 import de.dytanic.cloudnet.ext.bridge.player.IPlayerManager;
 import de.dytanic.cloudnet.ext.bridge.player.executor.PlayerExecutor;
+import net.codingarea.cloudbungeecmds.node.api.command.IProxyCommandSender;
 
 import java.util.UUID;
 
@@ -13,7 +13,7 @@ import java.util.UUID;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class ProxyPlayerCommandSender implements ICommandSender {
+public class ProxyPlayerProxyCommandSender implements IProxyCommandSender {
 
 	static IPlayerManager playerManager = CloudNetDriver.getInstance().getServicesRegistry().getFirstService(IPlayerManager.class);
 
@@ -22,7 +22,7 @@ public class ProxyPlayerCommandSender implements ICommandSender {
 	private PlayerExecutor playerExecutor;
 	private IPermissionUser permissionUser;
 
-	public ProxyPlayerCommandSender(UUID uuid) {
+	public ProxyPlayerProxyCommandSender(UUID uuid) {
 		this.uuid = uuid;
 	}
 

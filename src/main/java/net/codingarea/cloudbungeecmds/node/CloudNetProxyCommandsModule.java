@@ -18,32 +18,32 @@ public final class CloudNetProxyCommandsModule extends NodeCloudNetModule {
 
 	private static CloudNetProxyCommandsModule instance;
 
-	private ProxyCommandsManagement proxyCommandsManagement;
+	private ProxyCommandManagement proxyCommandManagement;
 
 	@ModuleTask(event = ModuleLifeCycle.LOADED)
 	public void onLoad() {
 		instance = this;
 
-		proxyCommandsManagement = new ProxyCommandsManagement();
-		getCloudNet().getServicesRegistry().registerService(ProxyCommandsManagement.class, "BungeeCommandsManagement", proxyCommandsManagement);
+		proxyCommandManagement = new ProxyCommandManagement();
+		getCloudNet().getServicesRegistry().registerService(ProxyCommandManagement.class, "BungeeCommandsManagement", proxyCommandManagement);
 
 		IEventManager eventManager = CloudNetDriver.getInstance().getEventManager();
 		eventManager.registerListener(new ProxyCommandsCloudChannelMessageReceiveListener());
 
-		proxyCommandsManagement.registerCommand(new ProxyCommandInfo("test"), (sender, command, args) -> {
+		proxyCommandManagement.registerCommand(new ProxyCommandInfo("test"), (sender, command, args) -> {
 			sender.sendMessage(Arrays.toString(args));
 		});
 
-		proxyCommandsManagement.unregisterCommand("test");
+		proxyCommandManagement.unregisterCommand("test");
 	}
 
 	@ModuleTask(event = ModuleLifeCycle.UNLOADED)
 	public void onUnload() {
-		proxyCommandsManagement.unregisterAllCommands();
+		proxyCommandManagement.unregisterAllCommands();
 	}
 
-	public ProxyCommandsManagement getBungeeCommandsManagement() {
-		return proxyCommandsManagement;
+	public ProxyCommandManagement getBungeeCommandsManagement() {
+		return proxyCommandManagement;
 	}
 
 	public static CloudNetProxyCommandsModule getInstance() {
