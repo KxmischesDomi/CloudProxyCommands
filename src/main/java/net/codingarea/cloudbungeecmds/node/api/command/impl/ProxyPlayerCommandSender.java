@@ -13,7 +13,7 @@ import java.util.UUID;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class ProxyPlayerProxyCommandSender implements IProxyCommandSender {
+public class ProxyPlayerCommandSender implements IProxyCommandSender {
 
 	static IPlayerManager playerManager = CloudNetDriver.getInstance().getServicesRegistry().getFirstService(IPlayerManager.class);
 
@@ -22,7 +22,7 @@ public class ProxyPlayerProxyCommandSender implements IProxyCommandSender {
 	private PlayerExecutor playerExecutor;
 	private IPermissionUser permissionUser;
 
-	public ProxyPlayerProxyCommandSender(UUID uuid) {
+	public ProxyPlayerCommandSender(UUID uuid) {
 		this.uuid = uuid;
 	}
 

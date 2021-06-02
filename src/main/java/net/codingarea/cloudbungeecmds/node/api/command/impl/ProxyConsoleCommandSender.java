@@ -12,11 +12,11 @@ import net.codingarea.cloudbungeecmds.node.api.command.IProxyCommandSender;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class ProxyConsoleProxyCommandSender implements IProxyCommandSender {
+public class ProxyConsoleCommandSender implements IProxyCommandSender {
 
 	private final ILogger logger;
 
-	public ProxyConsoleProxyCommandSender(ILogger logger) {
+	public ProxyConsoleCommandSender(ILogger logger) {
 		this.logger = logger;
 	}
 

@@ -13,7 +13,7 @@ import java.util.UUID;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class ProxyCommandsCloudChannelMessageReceiveListener {
+public class CloudChannelMessageReceiveListener {
 
 	private final ProxyCommandManagement proxyCommandManagement = CloudNetDriver.getInstance().getServicesRegistry().getFirstService(ProxyCommandManagement.class);
 

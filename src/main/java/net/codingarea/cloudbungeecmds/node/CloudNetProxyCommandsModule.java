@@ -5,10 +5,7 @@ import de.dytanic.cloudnet.driver.event.IEventManager;
 import de.dytanic.cloudnet.driver.module.ModuleLifeCycle;
 import de.dytanic.cloudnet.driver.module.ModuleTask;
 import de.dytanic.cloudnet.module.NodeCloudNetModule;
-import net.codingarea.cloudbungeecmds.ProxyCommandInfo;
-import net.codingarea.cloudbungeecmds.node.listener.ProxyCommandsCloudChannelMessageReceiveListener;
-
-import java.util.Arrays;
+import net.codingarea.cloudbungeecmds.node.listener.CloudChannelMessageReceiveListener;
 
 /**
  * @author KxmischesDomi | https://github.com/kxmischesdomi
@@ -25,10 +22,10 @@ public final class CloudNetProxyCommandsModule extends NodeCloudNetModule {
 		instance = this;
 
 		proxyCommandManagement = new ProxyCommandManagement();
-		getCloudNet().getServicesRegistry().registerService(ProxyCommandManagement.class, "BungeeCommandsManagement", proxyCommandManagement);
+		getCloudNet().getServicesRegistry().registerService(ProxyCommandManagement.class, "ProxyCommandsManagement", proxyCommandManagement);
 
 		IEventManager eventManager = CloudNetDriver.getInstance().getEventManager();
-		eventManager.registerListener(new ProxyCommandsCloudChannelMessageReceiveListener());
+		eventManager.registerListener(new CloudChannelMessageReceiveListener());
 	}
 
 	@ModuleTask(event = ModuleLifeCycle.UNLOADED)
