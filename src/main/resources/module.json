@@ -5,5 +5,5 @@
   "author": "KxmischesDomi",
   "website": "https://github.com/KxmischesDomi/CloudNet-v3",
   "description": "API to register bungeecord commands and use them via modules",
-  "main": "net.codingarea.cloudbungeecmds.node.CloudNetBungeeCommandsModule"
+  "main": "net.codingarea.cloudbungeecmds.cloud.cloudnet3.CloudNet3ProxyCommandsModule"
 }

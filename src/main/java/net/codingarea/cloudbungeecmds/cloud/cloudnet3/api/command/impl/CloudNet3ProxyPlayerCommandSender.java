@@ -1,11 +1,11 @@
-package net.codingarea.cloudbungeecmds.node.api.command.impl;
+package net.codingarea.cloudbungeecmds.cloud.cloudnet3.api.command.impl;
 
 import de.dytanic.cloudnet.driver.CloudNetDriver;
 import de.dytanic.cloudnet.driver.permission.IPermissionUser;
 import de.dytanic.cloudnet.ext.bridge.player.ICloudOfflinePlayer;
 import de.dytanic.cloudnet.ext.bridge.player.IPlayerManager;
 import de.dytanic.cloudnet.ext.bridge.player.executor.PlayerExecutor;
-import net.codingarea.cloudbungeecmds.node.api.command.IProxyCommandSender;
+import net.codingarea.cloudbungeecmds.cloud.api.command.impl.ProxyPlayerCommandSender;
 
 import java.util.UUID;
 
@@ -13,7 +13,7 @@ import java.util.UUID;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class ProxyPlayerCommandSender implements IProxyCommandSender {
+public class CloudNet3ProxyPlayerCommandSender implements ProxyPlayerCommandSender {
 
 	static IPlayerManager playerManager = CloudNetDriver.getInstance().getServicesRegistry().getFirstService(IPlayerManager.class);
 
@@ -22,7 +22,7 @@ public class ProxyPlayerCommandSender implements IProxyCommandSender {
 	private PlayerExecutor playerExecutor;
 	private IPermissionUser permissionUser;
 
-	public ProxyPlayerCommandSender(UUID uuid) {
+	public CloudNet3ProxyPlayerCommandSender(UUID uuid) {
 		this.uuid = uuid;
 	}
 
@@ -38,12 +38,6 @@ public class ProxyPlayerCommandSender implements IProxyCommandSender {
 		getPlayerExecutor().sendChatMessage(message);
 	}
 
-	@Override
-	public void sendMessage(String... messages) {
-		for (String message : messages) {
-			this.sendMessage(message);
-		}
-	}
 
 	@Override
 	public boolean hasPermission(String permission) {
@@ -69,5 +63,6 @@ public class ProxyPlayerCommandSender implements IProxyCommandSender {
 		permissionUser = CloudNetDriver.getInstance().getPermissionManagement().getUser(this.uuid);
 		return permissionUser;
 	}
+
 
 }

@@ -1,0 +1,9 @@
+{
+  "id": "proxy_commands",
+  "name": "Proxy-Commands",
+  "version": "1.0",
+  "authors": [
+    "CloudNetService"
+  ],
+  "main": "net.codingarea.cloudbungeecmds.node.CloudNetProxyCommandsModule"
+}

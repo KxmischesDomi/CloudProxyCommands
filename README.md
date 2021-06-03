@@ -30,16 +30,16 @@ manager.registerCommand(new ProxyCommandInfo("test", "system.testcommand", "t"),
 ```
 
 ```java
-import de.dytanic.cloudnet.command.ICommandSender;
-import net.codingarea.cloudbungeecmds.node.api.command.ProxyCommandExecutor;
+
+import net.codingarea.cloudbungeecmds.cloud.api.command.ProxyCommandExecutor;
 
 public class TestCommand implements ProxyCommandExecutor {
 
-	@Override
-	public void execute(IProxyCommandSender sender, String command, String[] args) {
-		sender.sendMessage(Arrays.toString(args));
-	}
-	
+ @Override
+ public void execute(IProxyCommandSender sender, String command, String[] args) {
+  sender.sendMessage(Arrays.toString(args));
+ }
+
 }
 ```
 

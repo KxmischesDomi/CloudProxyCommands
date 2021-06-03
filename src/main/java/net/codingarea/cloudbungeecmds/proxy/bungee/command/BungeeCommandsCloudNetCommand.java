@@ -1,7 +1,7 @@
-package net.codingarea.cloudbungeecmds.bungee.command;
+package net.codingarea.cloudbungeecmds.proxy.bungee.command;
 
 import net.codingarea.cloudbungeecmds.ProxyCommandInfo;
-import net.codingarea.cloudbungeecmds.bungee.BungeeCommandsBungeePlugin;
+import net.codingarea.cloudbungeecmds.proxy.ProxyCommandsPlugin;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
@@ -21,7 +21,7 @@ public class BungeeCommandsCloudNetCommand extends Command {
 
 	@Override
 	public void execute(CommandSender sender, String[] args) {
-		BungeeCommandsBungeePlugin.getInstance().executeCommand(getName(), getUUID(sender), args);
+		ProxyCommandsPlugin.getInstance().getProxyMessagingManagement().executeCommand(getName(), getUUID(sender), args);
 	}
 
 	private UUID getUUID(@NotNull CommandSender commandSender) {

@@ -1,10 +1,10 @@
-package net.codingarea.cloudbungeecmds.bungee.listener;
+package net.codingarea.cloudbungeecmds.proxy.bungee.listener;
 
 import de.dytanic.cloudnet.driver.event.EventListener;
 import de.dytanic.cloudnet.driver.event.events.channel.ChannelMessageReceiveEvent;
 import net.codingarea.cloudbungeecmds.ProxyCommandInfo;
 import net.codingarea.cloudbungeecmds.ProxyCommandsConstants;
-import net.codingarea.cloudbungeecmds.bungee.BungeeCommandsBungeePlugin;
+import net.codingarea.cloudbungeecmds.proxy.ProxyCommandsPlugin;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * @author KxmischesDomi | https://github.com/kxmischesdomi
  * @since 1.0
  */
-public class BungeeCommandsBungeeChannelMessageListener {
+public class BungeeChannelMessageListener {
 
 	@EventListener
 	public void onChannelMessageReceiver(@NotNull ChannelMessageReceiveEvent event) {
@@ -20,9 +20,9 @@ public class BungeeCommandsBungeeChannelMessageListener {
 		if (event.getMessage() == null) return;
 		if (event.getMessage().equals(ProxyCommandsConstants.BUNGEE_COMMANDS_REGISTER_COMMAND)) {
 			ProxyCommandInfo commandInfo = event.getData().get(ProxyCommandsConstants.BUNGEE_COMMANDS_REGISTER_COMMAND_INFO, ProxyCommandInfo.class);
-			BungeeCommandsBungeePlugin.getInstance().registerCommand(commandInfo);
+			ProxyCommandsPlugin.getInstance().registerCommand(commandInfo);
 		} else if (event.getMessage().equals(ProxyCommandsConstants.BUNGEE_COMMANDS_UNREGISTER_COMMAND)) {
-			BungeeCommandsBungeePlugin.getInstance().unRegisterCommand(event.getData().getString(ProxyCommandsConstants.BUNGEE_COMMANDS_UNREGISTER_COMMAND_NAME));
+			ProxyCommandsPlugin.getInstance().unregisterCommand(event.getData().getString(ProxyCommandsConstants.BUNGEE_COMMANDS_UNREGISTER_COMMAND_NAME));
 		}
 	}
 
