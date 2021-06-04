@@ -1,10 +1,8 @@
 package net.codingarea.cloudbungeecmds.proxy.management;
 
-import de.dytanic.cloudnet.common.document.gson.JsonDocument;
-import de.dytanic.cloudnet.driver.CloudNetDriver;
-import de.dytanic.cloudnet.wrapper.Wrapper;
-import net.codingarea.cloudbungeecmds.ProxyCommandExecuteInfo;
+import net.codingarea.cloudbungeecmds.utils.ProxyCommandExecuteInfo;
 import net.codingarea.cloudbungeecmds.ProxyCommandsConstants;
+import net.codingarea.cloudbungeecmds.messaging.MessagingHandler;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.UUID;
@@ -16,18 +14,18 @@ import java.util.UUID;
 public class ProxyMessagingManagement {
 
 	public void sendOnEnableMessage() {
-		CloudNetDriver.getInstance().getMessenger().sendChannelMessage(
+		MessagingHandler.getInstance().sendMessage(
 				ProxyCommandsConstants.BUNGEE_COMMANDS_CHANNEL_NAME,
 				ProxyCommandsConstants.BUNGEE_COMMANDS_ON_ENABLE,
-				new JsonDocument(ProxyCommandsConstants.BUNGEE_COMMANDS_COMMAND_ON_ENABLE_NAME, Wrapper.getInstance().getCurrentServiceInfoSnapshot().getName())
+				MessagingHandler.getInstance().createDocument().set(ProxyCommandsConstants.BUNGEE_COMMANDS_COMMAND_ON_ENABLE_NAME, MessagingHandler.getInstance().getCurrentServiceName())
 		);
 	}
 
 	public void executeCommand(@NotNull String name, UUID uuid, String[] args) {
-		CloudNetDriver.getInstance().getMessenger().sendChannelMessage(
+		MessagingHandler.getInstance().sendMessage(
 				ProxyCommandsConstants.BUNGEE_COMMANDS_CHANNEL_NAME,
 				ProxyCommandsConstants.BUNGEE_COMMANDS_EXECUTE_COMMAND,
-				new JsonDocument(ProxyCommandsConstants.BUNGEE_COMMANDS_COMMAND_EXECUTE_INFO, new ProxyCommandExecuteInfo(name, uuid, args))
+				MessagingHandler.getInstance().createDocument().set(ProxyCommandsConstants.BUNGEE_COMMANDS_COMMAND_EXECUTE_INFO, new ProxyCommandExecuteInfo(name, uuid, args))
 		);
 	}
 

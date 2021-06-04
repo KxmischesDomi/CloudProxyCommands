@@ -5,5 +5,11 @@
   "author": "KxmischesDomi",
   "website": "https://github.com/KxmischesDomi/CloudNet-v3",
   "description": "API to register bungeecord commands and use them via modules",
-  "main": "net.codingarea.cloudbungeecmds.cloud.cloudnet3.CloudNet3ProxyCommandsModule"
+  "main": "net.codingarea.cloudbungeecmds.module.cloudnet3.CloudNet3ProxyCommandsModule",
+  "mainClass": "net.codingarea.cloudbungeecmds.module.simplecloud.SimpleCloudProxyCommandsModule",
+  "moduleCopyType": "PROXY",
+  "repositories": [],
+  "dependencies": [],
+  "depend": [],
+  "softDepend": []
 }

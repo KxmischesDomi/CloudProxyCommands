@@ -3,7 +3,7 @@
   "name": "Proxy-Commands",
   "version": "1.0",
   "authors": [
-    "CloudNetService"
+    "KxmischesDomi"
   ],
-  "main": "net.codingarea.cloudbungeecmds.node.CloudNetProxyCommandsModule"
+  "main": "net.codingarea.cloudbungeecmds.proxy.velocity.ProxyCommandsVelocityPlugin"
 }

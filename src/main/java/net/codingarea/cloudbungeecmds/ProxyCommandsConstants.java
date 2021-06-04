@@ -8,6 +8,7 @@ public class ProxyCommandsConstants {
 
 	public static final String
 			BUNGEE_COMMANDS_CHANNEL_NAME = "bungee_commands_channel",
+			BUNGEE_COMMANDS_MESSAGE = "bungee_commands_message",
 
 			BUNGEE_COMMANDS_REGISTER_COMMAND = "register_command",
 			BUNGEE_COMMANDS_UNREGISTER_COMMAND = "unregister_command",

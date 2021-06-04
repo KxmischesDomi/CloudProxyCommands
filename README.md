@@ -34,7 +34,7 @@ manager.registerCommand(new ProxyCommandInfo("test", "system.testcommand", "t"),
 ```
 
 ```java
-import net.codingarea.cloudbungeecmds.cloud.api.command.ProxyCommandExecutor;
+import net.codingarea.cloudbungeecmds.module.api.command.ProxyCommandExecutor;
 
 public class TestCommand implements ProxyCommandExecutor {
 

@@ -16,8 +16,13 @@
     <repositories>
 
         <repository>
-            <id>releases</id>
-            <url>https://repo.cloudnetservice.eu/repository/releases/</url>
+            <id>snapshots</id>
+            <url>https://repo.cloudnetservice.eu/repository/snapshots/</url>
+        </repository>
+
+        <repository>
+            <id>gradle-release-local</id>
+            <url>https://repo.thesimplecloud.eu/artifactory/list/gradle-release-local/</url>
         </repository>
 
         <repository>
@@ -37,21 +42,21 @@
         <dependency>
             <groupId>de.dytanic.cloudnet</groupId>
             <artifactId>cloudnet</artifactId>
-            <version>3.3.0-RELEASE</version>
+            <version>3.4.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>de.dytanic.cloudnet</groupId>
             <artifactId>cloudnet-bridge</artifactId>
-            <version>3.3.0-RELEASE</version>
+            <version>3.4.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>de.dytanic.cloudnet</groupId>
             <artifactId>cloudnet-wrapper-jvm</artifactId>
-            <version>3.3.0-RELEASE</version>
+            <version>3.4.0-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
@@ -67,6 +72,13 @@
             <groupId>com.velocitypowered</groupId>
             <artifactId>velocity-api</artifactId>
             <version>1.1.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>eu.thesimplecloud.simplecloud</groupId>
+            <artifactId>simplecloud-api</artifactId>
+            <version>2.1.0</version>
             <scope>provided</scope>
         </dependency>
 
