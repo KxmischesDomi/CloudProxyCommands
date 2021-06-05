@@ -1,0 +1,9 @@
+{
+  "id": "proxy_commands",
+  "name": "Proxy-Commands",
+  "version": "1.0",
+  "authors": [
+    "KxmischesDomi"
+  ],
+  "main": "net.codingarea.cloudbungeecmds.proxy.velocity.ProxyCommandsVelocityPlugin"
+}
