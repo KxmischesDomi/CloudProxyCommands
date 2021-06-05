@@ -6,10 +6,8 @@ import net.codingarea.cloudbungeecmds.messaging.impl.receiving.CloudMessagingRec
 import net.codingarea.cloudbungeecmds.module.api.command.impl.ProxyConsoleCommandSender;
 import net.codingarea.cloudbungeecmds.module.api.command.impl.ProxyPlayerCommandSender;
 import net.codingarea.cloudbungeecmds.module.management.ProxyCommandManagement;
-import net.codingarea.cloudbungeecmds.utils.ProxyCommandInfo;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -27,10 +25,6 @@ public interface ProxyCommandsAPI {
 		MANAGEMENT.set(new ProxyCommandManagement());
 		MessagingHandler.initialize();
 		MessagingReceiver.HOLDER.set(new CloudMessagingReceiving());
-
-		getCommandsManagement().registerCommand(new ProxyCommandInfo("test"), (sender, command, args) -> {
-			sender.sendMessage(Arrays.toString(args));
-		});
 	}
 
 	default void unloadCommandsModule() {
