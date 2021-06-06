@@ -1,9 +1,21 @@
 # CloudProxyCommands
- A simple CloudNet Module api to register commands on your proxy and use them
- Looking forward to give support to more cloud systems than only CloudNet
+ A CloudNet & SimpleCloud Module api to register commands on your proxy and use them
+ 
+### Compatibility
+ Doesn't work with the current CloudNet release, you need to activate "cloudnet.snapshots.use-snapshots" in launcher.cnl
+
+ | Cloud         | Compatibility | API-Version     |
+ | ------------- |:-------------:| :-------------: |
+ | CloudNet      | ✔️            | 3.4             |
+ | SimpleCloud   | ✔️            | 2.1.0           |
+ 
+ | Proxy         | Compatibility | API-Version     |
+ | ------------- |:-------------:| :-------------: |
+ | Bungeecord    | ✔️            | 1.16-R0.5       |
+ | Velocity      | ✔️            | 1.1.5           |
 
 ### Installation
- Download the jar (coming soon) and put it into your modules folder and into your proxy plugins.
+ Download the [jar](https://github.com/KxmischesDomi/CloudProxyCommands/releases/download/1.0/cloud-proxy-commands.jar) and put it into your modules folder and into your proxy plugins folder.
  Restart the proxy and reload the cloud.
 
 ### Getting the manager
