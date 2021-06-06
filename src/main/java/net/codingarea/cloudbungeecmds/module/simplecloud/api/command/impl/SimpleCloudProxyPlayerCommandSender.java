@@ -26,7 +26,6 @@ public class SimpleCloudProxyPlayerCommandSender implements ProxyPlayerCommandSe
 
 	@Override
 	public void sendMessage(String message) {
-		System.out.println("send: " + message);
 		getCloudPlayer().sendMessage(message);
 	}
 
