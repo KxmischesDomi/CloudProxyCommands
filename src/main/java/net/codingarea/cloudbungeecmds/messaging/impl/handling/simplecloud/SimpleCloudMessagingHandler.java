@@ -12,7 +12,6 @@ import net.codingarea.cloudbungeecmds.messaging.MessageDocument;
 import net.codingarea.cloudbungeecmds.messaging.MessagingHandler;
 import net.codingarea.cloudbungeecmds.messaging.MessagingReceiver;
 import net.codingarea.cloudbungeecmds.module.ProxyCommandsAPI;
-import net.codingarea.cloudbungeecmds.module.simplecloud.SimpleCloudProxyCommandsModule;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -31,7 +30,7 @@ public class SimpleCloudMessagingHandler implements MessagingHandler, IMessageLi
 			if (!CloudAPI.getInstance().isManager()) {
 				registerChannel(CloudAPI.getInstance().getThisSidesCloudModule());
 			} else {
-				registerChannel(((SimpleCloudProxyCommandsModule) ProxyCommandsAPI.getModule()));
+				registerChannel(((ICloudModule) ProxyCommandsAPI.getModule()));
 			}
 		} catch (Exception ex) {
 			messageChannel = CloudAPI.getInstance().getMessageChannelManager().getMessageChannelByName(ProxyCommandsConstants.BUNGEE_COMMANDS_CHANNEL_NAME);
