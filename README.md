@@ -6,7 +6,7 @@
 
  | Cloud         | Compatibility | API-Version     |
  | ------------- |:-------------:| :-------------: |
- | CloudNet      | ✔️            | 3.4             |
+ | CloudNet 3    | ✔️            | 3.4             |
  | SimpleCloud   | ✔️            | 2.1.0           |
  
  | Proxy         | Compatibility | API-Version     |
